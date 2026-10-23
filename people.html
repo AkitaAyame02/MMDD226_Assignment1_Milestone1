@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pakwan Island Discoveries - Remade Blog</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300&family=Nanum+Brush+Script&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Important People</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="discoveries.html">Discoveries</a>
+            <a href="people.html">Important People</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <div class="popup-profile" id="popup">
+            <div class="popup-container">
+                <div class="limbus" id="image">
+                    <img src="/images/placeholder.png" alt="">
+                </div>
+                <div class="describer">
+                    <h1 id="name">Matsuda Souta</h1>
+                    <h2 id="source">Source: UTAU</h2>
+                    <p id="description">Yada yada yada <br>- Admin K</p>
+                    <button id="close">Close</button>
+                </div>
+            </div>
+        </div>
+        <div class="peeps">
+            <h2>Admins</h2>
+            <img src="/images/important/1.png" class="profile" alt="">
+            <img src="/images/important/2.png" class="profile" alt="">
+            <img src="/images/important/3.png" class="profile" alt="">
+            <br>
+            <h2>Helpful people</h2>
+            <img src="/images/important/5.png" class="profile" alt="">
+            <img src="/images/important/4.png" class="profile" alt="">
+            <img src="/images/important/6.png" class="profile" alt="">
+            <img src="/images/important/7.png" class="profile" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    //This script is weird. It doesn't work when put at the very end of the js file. It only works when it's in the middle of the file, which breaks the quiz part. So in order to prevent it from interfering, I'm forced to put the Javascript here.
+
+    let profile = document.getElementsByClassName("profile");
+    let hname = document.getElementById('name');
+    let hsource = document.getElementById('source');
+    let hdesc = document.getElementById('description')
+    let himage = document.getElementById('image')
+    let close = document.getElementById('close')
+
+    close.addEventListener("click", closeForm)
+
+    let name = [
+        "Souta Matsuda",
+        "Kanro Matsuda",
+        "Andrew Gauthier-Desjardins",
+        "Wataru Yuutsukoe",
+        "Karasu Yuutuskoe",
+        "Aeris Tashita",
+        "Gardenia White"
+    ]
+
+    let source = [
+        "Source: UTAU",
+        "Source: UTAU",
+        "Source: OC",
+        "Source: Tomodachi Life: Living the Dream kid",
+        "Source: UTAU",
+        "Source: UTAU",
+        "Source: Tomodachi Life kid"
+    ]
+
+    let description = [
+        "It's me. I originally came to the island for a change of pace. Never would've expected to investigate a mysterious island. But despite that, I'm the one who initially started the investigation.<br> - Souta",
+        "I'm the one who suggested we create the website! Originally, I was just a normal girl. But thanks to...weird island magic, I can also directly speak to some of the former Rooster Island residents! Unfortunately, I'm still an unreliable novice.<br> - Admin K",
+        "Without Andy, I don't we'll be able to listen to the cassette tapes. Rarely creates posts. We're (and by we, I really just mean me) 90% sure that Andrew has hidden some random thing in this website by a hidden link.<br> - Admin K",
+        "An unofficial addition to our team. We don't know why, but he's also interested in figuring out this island's mystery. Probably because his parents are confirmed Rooster Island residents themselves. We've forbidden him from posting at all in this website. He's only five, I think his parents will kill us if he gave him internet access.<br> - Souta",
+        "Our favourite non-human. He's also from Rooster Island, having escaped from there with his now-spouse when it was going through its destruction. He actually remembers some of his time on there! Sadly though, not only do he and Kuro have some partial memory loss, but they also escaped before the main show started to happen.<br> - Admin K",
+        "Originally, we thought that she might be from Rooster Island. Keyword: might. We weren't sure at the time. But from what Karasu has told us, we now know that she's an actual resident. She's in a unique position where all of her memories of Rooster Island have been completely wiped, not just partial memory loss like so many others.<br> - Souta",
+        "According to her, she was originally born on Rooster Island, before being sent away for her own safety. However, we haven't confirmed if her statements are true. Karasu doesn't recall her ever living on the island, and Bay and Hugh have said that they don't recall a \"Rooster Island\". Frankly though, I'd like to believe her.<br> - Admin K"
+    ]
+
+    let image = [
+        '<img src="/images/important/1.png" alt="">',
+        '<img src="/images/important/2.png" alt="">',
+        '<img src="/images/important/3.png" alt="">',
+        '<img src="/images/important/5.png" alt="">',
+        '<img src="/images/important/4.png" alt="">',
+        '<img src="/images/important/6.png" alt="">',
+        '<img src="/images/important/7.png" alt="">'
+    ]
+
+    for (let i = 0; i < profile.length; i = i + 1) {
+        profile[i].addEventListener("click", openForm);
+        profile[i].addEventListener("click", changeText);
+        function changeText() { //I don't know how this works, and why it only worked when put in here. Probably because the "i" variable is only set here. But you know what, we take these.
+            hname.innerHTML = name[i];
+            hsource.innerHTML = source[i];
+            hdesc.innerHTML = description[i];
+            himage.innerHTML = image[i]
+        }
+    }
+
+    function openForm() {
+        document.getElementById("popup").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+</script>
+<footer>
+    <p>This is a fansite and is not associated with any of the featured franchises (other than my OCs) in any way.
+        Resident pictures drawn by me.</p>
+</footer>
+
+</html>

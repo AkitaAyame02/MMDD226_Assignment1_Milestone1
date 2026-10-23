@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pakwan Island Discoveries - Remade Blog</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/analytics.css">
+</head>
+
+<body>
+    <header>
+        <h1>Test</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="discoveries.html">Discoveries</a>
+            <a href="people.html">Important People</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <p>Okay, this is the actual dev speaking and not a character. I ran out of time to create a new website, so I
+            decided to go with a different take on the quiz to try and make it somewhat similar to my original idea.
+            Only one question because this will likely need a lot of refining.</p>
+        <label for="dropdown">Out of all the people listed in this question, who is the only one who doesn't have any
+            paranormal abilities?</label>
+        <select name="paranormal" id="dropdown">
+            <option value="blank"> </option>
+            <option value="andrew">Andrew</option>
+            <option value="kanro">Kanro</option>
+            <option value="karasu">Karasu</option>
+            <option value="souta">Souta</option>
+        </select>
+        <input type="submit" id="submit-btn">
+        <p class="restext" id="result-text"></p>
+    </div>
+
+    <footer>
+        <p>This is a Tomodachi Life fansite by AkitaAyame_02 and is not associated with any of the featured franchises
+            (other than my OCs) in any way.
+            Banner art and idle resident pictures drawn by me.</p>
+    </footer>
+
+    <script src="js/analytics.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdown = document.getElementById('dropdown');
+            const submitBtn = document.getElementById('submit-btn');
+            const restext = document.getElementById('result-text');
+
+            dropdown.addEventListener('change', function () {
+                const selectedVal = dropdown.options[dropdown.selectedIndex].text;
+                if (window.Analytics) {
+                    window.Analytics.logSelection(
+                        'dropdown_selection',
+                        'Paranormal quiz dropdown option changed',
+                        `Selected: ${selectedVal}`
+                    );
+                }
+            });
+
+            submitBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                const selectedVal = dropdown.value;
+                if (selectedVal === "souta") {
+                    restext.innerHTML = "Correct!";
+                } else if (selectedVal === "blank") {
+                    restext.innerHTML = "Please select an answer!";
+                } else {
+                    restext.innerHTML = "Sorry, please refresh the page and try again!";
+                }
+
+                if (window.Analytics) {
+                    window.Analytics.logSelection(
+                        'quiz_submit',
+                        'Paranormal question submitted',
+                        `Choice: ${selectedVal} (${selectedVal === 'souta' ? 'Correct' : 'Incorrect'})`
+                    );
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

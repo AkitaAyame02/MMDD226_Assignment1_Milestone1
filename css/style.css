@@ -1,0 +1,241 @@
+html {
+    background-color: bisque;
+    font-size: 1.2rem;
+    font-family: "Mukta", sans-serif;
+    font-weight: 300;
+}
+
+.mukta-extralight {
+    font-family: "Mukta", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.mukta-light {
+    font-family: "Mukta", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.nanum-brush-script-regular {
+    font-family: "Nanum Brush Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    background: linear-gradient(rgb(36, 131, 241), rgb(26, 86, 213));
+    padding: 20px;
+    filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.5));
+    color: white;
+
+}
+
+header h1 {
+    text-align: center;
+    font-family: "Nanum Brush Script", cursive;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+nav {
+    justify-content: space-around;
+    text-align: center;
+    align-items: justify;
+    margin: 5px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 10px;
+    transition: ease-in 0.2s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+.toc {
+    border: 2px black solid;
+    margin-bottom: 10px;
+    margin-right: 80%;
+}
+
+.toc a {
+    color: black;
+    text-decoration: none;
+}
+
+.blog-post {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px black solid;
+}
+
+.admin-write {
+    font-size: 0.95em;
+    line-height: 0.6em;
+}
+
+footer {
+    padding: 20px;
+    margin: 0;
+    background-color: rgb(36, 131, 241)
+}
+
+.wrapper {
+    padding: 20px;
+    margin: 20px;
+}
+
+.home {
+    text-align: center;
+}
+
+.agd {
+    color: black;
+    text-decoration: none;
+    cursor: default;
+    transition: ease-in 0.5s;
+}
+
+.agd:hover {
+    color: rgb(36, 131, 241);
+    text-decoration: underline;
+}
+
+#question {
+    margin-bottom: 20px;
+}
+
+#options {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#options button {
+    background-color: rgb(36, 131, 241);
+    font-family: "Mukta", sans-serif;
+    border: none;
+    font-size: 105%;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: ease-in 0.2s;
+}
+
+#options button:hover {
+    background-color: rgb(10, 90, 182);
+    color: white;
+}
+
+.results button {
+    display: none;
+}
+
+.profile {
+    max-width: 20%;
+    cursor: pointer;
+}
+
+.popup-profile {
+    filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.5));
+    z-index: 3;
+    display: none;
+    position: fixed;
+    place-self: center;
+    width: 80%;
+    margin-top: 20%;
+}
+
+.popup-container {
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    padding: 25px;
+    display: flex;
+}
+
+.peeps {
+    justify-content: space-around;
+    text-align: center;
+    align-items: justify;
+}
+
+.peeps img {
+    margin: 10px;
+    transition: ease-in 0.2s;
+}
+
+.peeps img:hover {
+    margin: 10px;
+    max-width: 22%;
+}
+
+.limbus {
+    max-width: 40%;
+}
+
+.limbus img {
+    max-width: 90%;
+}
+
+.describer {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 400px;
+}
+
+.describer button {
+    background-color: rgb(36, 131, 241);
+    font-family: "Mukta", sans-serif;
+    border: none;
+    font-size: 100%;
+    padding: 15px 20px 15px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: ease-in 0.2s;
+}
+
+.describer button:hover {
+    background-color: rgb(10, 90, 182);
+    color: white;
+}
+
+#magic {
+    background-color: rgb(36, 131, 241);
+    font-family: "Mukta", sans-serif;
+    border: none;
+    font-size: 100%;
+    padding: 5px 20px 5px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: ease-in 0.2s;
+    text-decoration: none;
+}
+
+.results a {
+    text-decoration: none;
+}
+
+#magic:hover {
+    background-color: rgb(10, 90, 182);
+    color: white;
+}
+
+.home-page {
+    color: black;
+    text-decoration: none;
+    transition: ease-in 0.2s;
+}
+
+.home-page:hover {
+    color: rgb(36, 131, 241);
+    text-decoration: underline;
+}
